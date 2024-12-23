@@ -1,0 +1,4885 @@
+log started: Fri Jul 14 16:53:52 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Fri Jul 14 16:53:52 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb O0W_comb.pdb
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Fatal Error!
+Could not open file O0W_comb.pdb: not found
+
+Exiting LEaP: Errors = 1; Warnings = 0; Notes = 0.
+log started: Fri Jul 14 16:54:07 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Fri Jul 14 16:54:07 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+Created a new atom named: HE2 within residue: .R<GLU 802>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+  The file contained 1 atoms not in residue templates
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Mass > 830258.654 amu,  Density > 0.915 g/cc
+      (type - hence mass - of one or more atoms could not be found)
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -13.000001
+Total perturbed charge:   -13.000001
+> addionsrand complex Na+ 46 Cl- 24
+Adding 70 counter ions to "complex". 36363 solvent molecules will remain.
+0: Placed Na+ in complex at (5.63, -37.40, -32.64).
+Placed Cl- in complex at (-25.35, -51.72, -8.75).
+0: Placed Na+ in complex at (23.42, -5.88, -50.52).
+Placed Cl- in complex at (28.39, 1.29, -42.28).
+0: Placed Na+ in complex at (-23.56, -23.50, 39.82).
+Placed Cl- in complex at (4.91, -61.41, 23.02).
+0: Placed Na+ in complex at (26.53, -26.81, -48.16).
+Placed Cl- in complex at (58.76, 20.85, -31.74).
+0: Placed Na+ in complex at (22.44, -53.80, 12.44).
+Placed Cl- in complex at (-42.62, 13.27, 38.56).
+0: Placed Na+ in complex at (-14.83, -31.95, 23.39).
+Placed Cl- in complex at (-2.96, 60.35, 18.40).
+0: Placed Na+ in complex at (-27.15, -28.56, -46.36).
+Placed Cl- in complex at (40.81, 37.08, 33.52).
+0: Placed Na+ in complex at (37.06, 41.63, 4.17).
+Placed Cl- in complex at (30.32, -26.46, -10.86).
+0: Placed Na+ in complex at (-14.86, -6.30, -43.66).
+Placed Cl- in complex at (42.66, 18.27, -39.50).
+0: Placed Na+ in complex at (29.01, 48.55, -30.16).
+Placed Cl- in complex at (-32.26, 16.59, 53.55).
+0: Placed Na+ in complex at (-35.34, -12.78, -33.89).
+Placed Cl- in complex at (24.66, -16.86, 1.27).
+0: Placed Na+ in complex at (-42.85, 40.71, 6.20).
+Placed Cl- in complex at (-14.78, -14.38, 44.63).
+0: Placed Na+ in complex at (-8.43, 0.80, -56.85).
+Placed Cl- in complex at (-24.13, -17.09, -10.72).
+0: Placed Na+ in complex at (-2.95, -56.11, -41.46).
+Placed Cl- in complex at (-50.90, 10.58, 17.07).
+0: Placed Na+ in complex at (47.90, 10.97, 4.17).
+Placed Cl- in complex at (-31.86, -51.41, 0.35).
+0: Placed Na+ in complex at (39.27, 37.17, -1.02).
+Placed Cl- in complex at (-23.18, -24.76, 7.79).
+0: Placed Na+ in complex at (17.07, -48.85, -40.45).
+Placed Cl- in complex at (43.25, 19.16, -9.00).
+0: Placed Na+ in complex at (33.47, 61.32, -9.80).
+Placed Cl- in complex at (31.88, -29.52, 45.66).
+0: Placed Na+ in complex at (17.16, 27.03, 39.34).
+Placed Cl- in complex at (49.55, -16.85, 22.22).
+0: Placed Na+ in complex at (20.23, -4.54, 66.43).
+Placed Cl- in complex at (-51.16, -45.85, -18.24).
+0: Placed Na+ in complex at (-60.80, -30.37, 9.43).
+Placed Cl- in complex at (43.87, 25.38, 32.75).
+0: Placed Na+ in complex at (16.46, 59.86, 12.28).
+Placed Cl- in complex at (-21.38, -23.55, -34.79).
+0: Placed Na+ in complex at (40.86, 53.47, -11.99).
+Placed Cl- in complex at (-27.95, -55.80, 21.37).
+0: Placed Na+ in complex at (12.76, 43.20, -29.84).
+Placed Cl- in complex at (-16.52, 8.28, -16.23).
+0: Placed Na+ in complex at (26.22, 49.29, 17.44).
+0: Placed Na+ in complex at (-33.52, -19.94, 34.97).
+0: Placed Na+ in complex at (0.85, 47.38, 10.96).
+0: Placed Na+ in complex at (1.17, -55.29, -16.37).
+0: Placed Na+ in complex at (-47.20, -31.58, 14.58).
+0: Placed Na+ in complex at (-26.90, 21.54, 25.56).
+0: Placed Na+ in complex at (46.40, 23.14, -31.51).
+0: Placed Na+ in complex at (-35.84, -27.22, -41.22).
+0: Placed Na+ in complex at (61.00, -15.46, 3.49).
+0: Placed Na+ in complex at (-50.75, 32.31, -13.05).
+0: Placed Na+ in complex at (45.31, 29.36, -34.21).
+0: Placed Na+ in complex at (14.92, -38.78, -54.46).
+0: Placed Na+ in complex at (20.18, -9.43, 60.90).
+0: Placed Na+ in complex at (28.06, 35.41, 40.57).
+0: Placed Na+ in complex at (-3.51, -66.42, -16.88).
+0: Placed Na+ in complex at (-27.83, 39.19, -20.37).
+0: Placed Na+ in complex at (-0.85, -11.86, -49.98).
+0: Placed Na+ in complex at (-7.86, 29.13, 54.37).
+0: Placed Na+ in complex at (-8.38, -25.51, 12.54).
+0: Placed Na+ in complex at (13.00, 52.22, 27.04).
+0: Placed Na+ in complex at (9.17, -46.65, -41.63).
+0: Placed Na+ in complex at (-4.09, -47.51, -27.95).
+> charge complex
+Total unperturbed charge:   8.999999
+Total perturbed charge:     8.999999
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Warning!
+The unperturbed charge of the unit (8.999999) is not zero.
+FATAL:  Atom .R<GLU 802>.A<HE2 16> does not have a type.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Fatal Error!
+Failed to generate parameters
+
+Exiting LEaP: Errors = 1; Warnings = 1; Notes = 0.
+log started: Fri Jul 14 16:55:14 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Fri Jul 14 16:55:14 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Total mass 830259.662 amu,  Density 0.915 g/cc
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -12.000001
+Total perturbed charge:   -12.000001
+> addionsrand complex Na+ 38 Cl- 24
+Adding 62 counter ions to "complex". 36371 solvent molecules will remain.
+0: Placed Na+ in complex at (43.33, -47.13, -9.55).
+Placed Cl- in complex at (-15.88, 45.65, -43.17).
+0: Placed Na+ in complex at (1.77, 50.95, -4.16).
+Placed Cl- in complex at (-4.09, -24.15, 52.08).
+0: Placed Na+ in complex at (-12.21, -69.04, -18.01).
+Placed Cl- in complex at (-29.91, -44.66, 32.87).
+0: Placed Na+ in complex at (44.12, 22.84, 38.99).
+Placed Cl- in complex at (-35.02, -30.84, 1.29).
+0: Placed Na+ in complex at (-24.18, -61.50, 1.29).
+Placed Cl- in complex at (49.59, -2.87, 39.20).
+0: Placed Na+ in complex at (57.54, 9.65, 27.15).
+Placed Cl- in complex at (-35.48, -8.63, 31.68).
+0: Placed Na+ in complex at (44.53, 29.02, -3.09).
+Placed Cl- in complex at (18.75, 35.03, -23.21).
+0: Placed Na+ in complex at (-25.51, -31.85, 42.62).
+Placed Cl- in complex at (51.42, 48.97, -6.94).
+0: Placed Na+ in complex at (-29.67, -62.77, 17.11).
+Placed Cl- in complex at (5.36, 40.42, 46.57).
+0: Placed Na+ in complex at (-5.04, -60.86, -33.53).
+Placed Cl- in complex at (-6.31, -33.27, -34.11).
+0: Placed Na+ in complex at (-22.93, -49.45, -7.53).
+Placed Cl- in complex at (11.60, -46.14, -53.94).
+0: Placed Na+ in complex at (4.44, -6.61, 2.64).
+Placed Cl- in complex at (14.25, -7.27, -67.38).
+0: Placed Na+ in complex at (-12.51, 37.66, 24.75).
+Placed Cl- in complex at (55.93, 40.10, -23.97).
+0: Placed Na+ in complex at (23.78, -38.05, 6.61).
+Placed Cl- in complex at (-29.07, 16.98, 40.05).
+0: Placed Na+ in complex at (-31.90, 2.83, 61.22).
+Placed Cl- in complex at (45.23, -34.54, 37.85).
+0: Placed Na+ in complex at (-31.10, 25.45, 55.43).
+Placed Cl- in complex at (-19.90, 43.28, 35.66).
+0: Placed Na+ in complex at (32.76, -26.35, -23.76).
+Placed Cl- in complex at (34.21, 41.22, 3.56).
+0: Placed Na+ in complex at (-18.64, 0.14, -44.79).
+Placed Cl- in complex at (8.64, 57.85, 2.42).
+0: Placed Na+ in complex at (-40.92, 2.87, -51.84).
+Placed Cl- in complex at (-45.56, -41.79, 15.69).
+0: Placed Na+ in complex at (-33.04, 31.47, -31.58).
+Placed Cl- in complex at (-51.45, 16.19, -17.41).
+0: Placed Na+ in complex at (15.10, 23.88, 54.71).
+Placed Cl- in complex at (-24.62, 28.20, -54.74).
+0: Placed Na+ in complex at (58.89, -22.12, 6.18).
+Placed Cl- in complex at (27.87, 21.47, -44.16).
+0: Placed Na+ in complex at (-39.39, -14.65, -30.76).
+Placed Cl- in complex at (38.75, -41.19, -27.18).
+0: Placed Na+ in complex at (-57.52, 34.10, -14.67).
+Placed Cl- in complex at (-27.36, 38.94, 10.32).
+0: Placed Na+ in complex at (-12.42, 1.38, -10.22).
+0: Placed Na+ in complex at (-23.56, 45.48, -0.01).
+0: Placed Na+ in complex at (-3.50, -17.50, 62.86).
+0: Placed Na+ in complex at (30.84, -15.99, -15.08).
+0: Placed Na+ in complex at (-38.97, 17.91, 51.03).
+0: Placed Na+ in complex at (48.56, -5.25, 29.20).
+0: Placed Na+ in complex at (29.74, 41.31, -20.21).
+0: Placed Na+ in complex at (42.23, -4.03, -41.38).
+0: Placed Na+ in complex at (-1.73, 44.76, -42.27).
+0: Placed Na+ in complex at (25.75, -23.45, -27.90).
+0: Placed Na+ in complex at (-35.29, -50.67, 6.34).
+0: Placed Na+ in complex at (58.59, -28.08, -28.62).
+0: Placed Na+ in complex at (-31.03, -63.99, 0.55).
+0: Placed Na+ in complex at (-21.81, 3.58, -12.47).
+> charge complex
+Total unperturbed charge:   1.999999
+Total perturbed charge:     1.999999
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Warning!
+The unperturbed charge of the unit (1.999999) is not zero.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1530>:  C2   H3   C1   N1  
+ <MOL 1530>:  C8   C1   N1   N2  
+ <MOL 1530>:  C20  C2   C16  N2  
+ <MOL 1530>:  C7   C16  C20  C19 
+ <MOL 1530>:  C20  C18  C19  H23 
+ <MOL 1530>:  C16  C17  C2   C1  
+ <MOL 1530>:  C2   C18  C17  H22 
+ <MOL 1530>:  C19  C17  C18  C21 
+ <MOL 1530>:  C18  C3   C21  C6  
+ <MOL 1530>:  C21  H4   C3   N3  
+ <MOL 1530>:  C13  C4   N3   C3  
+ <MOL 1530>:  C5   N3   C4   O1  
+ <MOL 1530>:  C4   C14  C5   C6  
+ <MOL 1530>:  C5   C21  C6   O2  
+ <MOL 1530>:  C14  H21  C15  O2  
+ <MOL 1530>:  C5   C15  C14  H20 
+ total 4924 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	36371
+  )
+ (no restraints)
+> savepdb complex 6ty5_ref.pdb
+Writing pdb file: 6ty5_ref.pdb
+   printing CRYST1 record to PDB file with box info
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 1; Notes = 1.
+log started: Wed Jul 19 16:09:25 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 19 16:09:25 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+> bond complex.7.SG complex.20.SG
+> bond complex.152.SG complex.158.SG
+> bond complex.228.SG complex.241.SG
+> bond complex.231.SG complex.238.SG
+> bond complex.424.SG complex.454.SG
+> bond complex.721.SG complex.748.SG
+> bond complex.992.SG complex.1005.SG
+> bond complex.995.SG complex.1002.SG
+> bond complex.1189.SG complex.1219.SG
+> bond complex.1486.SG complex.1513.SG
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Total mass 830259.662 amu,  Density 0.915 g/cc
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -12.000001
+Total perturbed charge:   -12.000001
+> addionsrand complex Na+ 38 Cl- 24
+Adding 62 counter ions to "complex". 36371 solvent molecules will remain.
+0: Placed Na+ in complex at (23.42, -51.87, -23.97).
+Placed Cl- in complex at (-14.63, -15.11, 8.08).
+0: Placed Na+ in complex at (9.75, 14.38, -63.60).
+Placed Cl- in complex at (48.52, 31.28, -29.51).
+0: Placed Na+ in complex at (-23.13, -42.87, 0.05).
+Placed Cl- in complex at (9.97, 55.08, -35.21).
+0: Placed Na+ in complex at (-48.76, -22.01, -20.42).
+Placed Cl- in complex at (-10.77, -62.89, -5.83).
+0: Placed Na+ in complex at (34.97, 35.81, 12.54).
+Placed Cl- in complex at (-59.84, 2.41, 42.47).
+0: Placed Na+ in complex at (49.59, -25.86, 25.92).
+Placed Cl- in complex at (44.12, -0.15, 52.26).
+0: Placed Na+ in complex at (39.11, 58.95, -20.75).
+Placed Cl- in complex at (23.56, -40.73, 9.36).
+0: Placed Na+ in complex at (-20.83, 39.71, 24.24).
+Placed Cl- in complex at (-2.50, 46.64, -0.86).
+0: Placed Na+ in complex at (-50.41, 19.53, 28.54).
+Placed Cl- in complex at (18.87, -0.78, 64.79).
+0: Placed Na+ in complex at (-35.07, -47.23, -6.30).
+Placed Cl- in complex at (-19.22, 51.14, -14.01).
+0: Placed Na+ in complex at (4.45, 10.50, 52.92).
+Placed Cl- in complex at (48.96, 44.60, 15.32).
+0: Placed Na+ in complex at (20.59, 67.90, 16.72).
+Placed Cl- in complex at (-31.24, 32.79, -25.68).
+0: Placed Na+ in complex at (-47.20, -31.58, -11.97).
+Placed Cl- in complex at (32.92, 62.59, 10.84).
+0: Placed Na+ in complex at (-14.68, 37.40, 1.31).
+Placed Cl- in complex at (-25.10, 41.75, -13.41).
+0: Placed Na+ in complex at (-25.35, -5.74, 44.35).
+Placed Cl- in complex at (15.10, -22.11, 54.71).
+0: Placed Na+ in complex at (-33.45, -54.04, 11.77).
+Placed Cl- in complex at (29.74, -50.67, 32.89).
+0: Placed Na+ in complex at (-22.68, -4.61, 34.97).
+Placed Cl- in complex at (15.75, 45.89, -3.54).
+0: Placed Na+ in complex at (24.12, -20.13, 67.64).
+Placed Cl- in complex at (-14.14, -6.24, -54.31).
+0: Placed Na+ in complex at (-19.80, 34.44, 24.57).
+Placed Cl- in complex at (56.21, 40.44, -27.79).
+0: Placed Na+ in complex at (-23.32, -12.27, 35.92).
+Placed Cl- in complex at (-36.60, -1.53, 51.70).
+0: Placed Na+ in complex at (-54.49, 12.30, 4.47).
+Placed Cl- in complex at (-59.07, 8.30, -8.92).
+0: Placed Na+ in complex at (2.19, -34.24, 38.27).
+Placed Cl- in complex at (-19.49, 12.29, 60.43).
+0: Placed Na+ in complex at (-44.21, 41.79, 16.39).
+Placed Cl- in complex at (-53.91, -31.15, -20.75).
+0: Placed Na+ in complex at (-10.22, -35.49, 47.94).
+Placed Cl- in complex at (35.83, 47.20, 17.57).
+0: Placed Na+ in complex at (-37.73, 39.25, -32.64).
+0: Placed Na+ in complex at (-10.08, 38.17, 38.99).
+0: Placed Na+ in complex at (-60.96, 14.88, 11.92).
+0: Placed Na+ in complex at (-18.40, 47.08, -23.83).
+0: Placed Na+ in complex at (-22.53, -19.52, 16.39).
+0: Placed Na+ in complex at (-35.15, 2.94, 43.26).
+0: Placed Na+ in complex at (35.67, -1.73, 9.69).
+0: Placed Na+ in complex at (-33.50, 27.99, -29.55).
+0: Placed Na+ in complex at (-38.80, 22.46, 13.71).
+0: Placed Na+ in complex at (-20.63, -4.40, -11.09).
+0: Placed Na+ in complex at (-15.44, 20.13, 52.48).
+0: Placed Na+ in complex at (46.63, 1.09, 55.82).
+0: Placed Na+ in complex at (46.21, 21.54, 30.38).
+0: Placed Na+ in complex at (24.25, 38.77, -20.52).
+> charge complex
+Total unperturbed charge:   1.999999
+Total perturbed charge:     1.999999
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Warning!
+The unperturbed charge of the unit (1.999999) is not zero.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1530>:  C2   H3   C1   N1  
+ <MOL 1530>:  C8   C1   N1   N2  
+ <MOL 1530>:  C20  C2   C16  N2  
+ <MOL 1530>:  C7   C16  C20  C19 
+ <MOL 1530>:  C20  C18  C19  H23 
+ <MOL 1530>:  C16  C17  C2   C1  
+ <MOL 1530>:  C2   C18  C17  H22 
+ <MOL 1530>:  C19  C17  C18  C21 
+ <MOL 1530>:  C18  C3   C21  C6  
+ <MOL 1530>:  C21  H4   C3   N3  
+ <MOL 1530>:  C13  C4   N3   C3  
+ <MOL 1530>:  C5   N3   C4   O1  
+ <MOL 1530>:  C4   C14  C5   C6  
+ <MOL 1530>:  C5   C21  C6   O2  
+ <MOL 1530>:  C14  H21  C15  O2  
+ <MOL 1530>:  C5   C15  C14  H20 
+ total 4924 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	36371
+  )
+ (no restraints)
+> savepdb complex 6ty5_ref.pdb
+Writing pdb file: 6ty5_ref.pdb
+   printing CRYST1 record to PDB file with box info
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 1; Notes = 1.
+log started: Wed Jul 19 16:09:51 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/openmmdl/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Wed Jul 19 16:09:51 2023
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+> bond complex.7.SG complex.20.SG
+> bond complex.152.SG complex.158.SG
+> bond complex.228.SG complex.241.SG
+> bond complex.231.SG complex.238.SG
+> bond complex.424.SG complex.454.SG
+> bond complex.721.SG complex.748.SG
+> bond complex.992.SG complex.1005.SG
+> bond complex.995.SG complex.1002.SG
+> bond complex.1189.SG complex.1219.SG
+> bond complex.1486.SG complex.1513.SG
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Total mass 830259.662 amu,  Density 0.915 g/cc
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -12.000001
+Total perturbed charge:   -12.000001
+> addionsrand complex Na+ 37 Cl- 24
+Adding 61 counter ions to "complex". 36372 solvent molecules will remain.
+0: Placed Na+ in complex at (3.51, -1.70, -74.24).
+Placed Cl- in complex at (31.07, 33.78, 0.05).
+0: Placed Na+ in complex at (-3.67, -15.98, -35.48).
+Placed Cl- in complex at (58.97, -3.00, 15.40).
+0: Placed Na+ in complex at (17.07, -48.85, 39.20).
+Placed Cl- in complex at (-54.83, 8.80, 32.39).
+0: Placed Na+ in complex at (32.35, -9.18, -29.08).
+Placed Cl- in complex at (-55.28, 29.58, 30.00).
+0: Placed Na+ in complex at (-51.16, -22.85, 21.59).
+Placed Cl- in complex at (-47.88, 27.03, 39.34).
+0: Placed Na+ in complex at (-34.50, -35.29, -17.89).
+Placed Cl- in complex at (43.97, -27.83, -44.99).
+0: Placed Na+ in complex at (-18.44, 14.49, -12.96).
+Placed Cl- in complex at (34.39, -26.88, 51.12).
+0: Placed Na+ in complex at (-31.90, 2.83, 34.67).
+Placed Cl- in complex at (1.05, 3.27, -50.92).
+0: Placed Na+ in complex at (-14.35, -29.25, 25.56).
+Placed Cl- in complex at (-14.93, 40.35, -6.03).
+0: Placed Na+ in complex at (42.47, -24.79, -32.48).
+Placed Cl- in complex at (-23.02, 48.08, 8.32).
+0: Placed Na+ in complex at (1.05, -0.74, -1.80).
+Placed Cl- in complex at (-37.56, -37.86, -20.26).
+0: Placed Na+ in complex at (19.18, -35.78, 47.57).
+Placed Cl- in complex at (-44.45, 6.72, 55.88).
+0: Placed Na+ in complex at (-17.13, 10.97, 4.17).
+Placed Cl- in complex at (-19.24, 10.53, 67.64).
+0: Placed Na+ in complex at (-3.32, -9.99, 18.82).
+Placed Cl- in complex at (54.81, -35.49, -5.16).
+0: Placed Na+ in complex at (53.49, -1.91, -45.11).
+Placed Cl- in complex at (-61.24, -18.79, 15.26).
+0: Placed Na+ in complex at (53.31, -9.46, -32.48).
+Placed Cl- in complex at (2.57, 54.10, 32.59).
+0: Placed Na+ in complex at (42.42, 7.28, -41.33).
+Placed Cl- in complex at (-44.21, 41.79, 16.39).
+0: Placed Na+ in complex at (-22.31, -60.18, -7.44).
+Placed Cl- in complex at (-35.44, 50.36, 3.34).
+0: Placed Na+ in complex at (50.19, 6.61, 15.74).
+Placed Cl- in complex at (1.72, -33.54, 33.79).
+0: Placed Na+ in complex at (49.55, 29.14, -4.33).
+Placed Cl- in complex at (2.56, 47.05, 28.68).
+0: Placed Na+ in complex at (-14.88, 38.19, 43.32).
+Placed Cl- in complex at (39.53, -31.85, 42.62).
+0: Placed Na+ in complex at (12.48, -26.85, -60.03).
+Placed Cl- in complex at (-57.46, 1.70, 14.80).
+0: Placed Na+ in complex at (-60.48, 2.60, 4.74).
+Placed Cl- in complex at (-25.47, -30.44, 8.08).
+0: Placed Na+ in complex at (12.72, -11.55, -1.98).
+Placed Cl- in complex at (18.86, 40.87, 5.94).
+0: Placed Na+ in complex at (25.91, -22.70, -3.85).
+0: Placed Na+ in complex at (-22.68, 18.38, 48.24).
+0: Placed Na+ in complex at (-43.62, -5.63, 45.51).
+0: Placed Na+ in complex at (-57.87, -46.64, -8.93).
+0: Placed Na+ in complex at (52.62, -12.91, -42.72).
+0: Placed Na+ in complex at (40.54, 25.54, 32.49).
+0: Placed Na+ in complex at (-22.66, -48.66, -29.55).
+0: Placed Na+ in complex at (-44.80, -17.20, 23.30).
+0: Placed Na+ in complex at (42.88, -6.68, -48.33).
+0: Placed Na+ in complex at (18.52, -14.08, 14.43).
+0: Placed Na+ in complex at (-16.07, -70.37, -24.50).
+0: Placed Na+ in complex at (47.59, -15.04, 35.98).
+0: Placed Na+ in complex at (24.83, 51.92, -30.14).
+> charge complex
+Total unperturbed charge:   0.999999
+Total perturbed charge:     0.999999
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Warning!
+The unperturbed charge of the unit (0.999999) is not zero.
+
+/home/valerij/miniconda3/envs/openmmdl/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1530>:  C2   H3   C1   N1  
+ <MOL 1530>:  C8   C1   N1   N2  
+ <MOL 1530>:  C20  C2   C16  N2  
+ <MOL 1530>:  C7   C16  C20  C19 
+ <MOL 1530>:  C20  C18  C19  H23 
+ <MOL 1530>:  C16  C17  C2   C1  
+ <MOL 1530>:  C2   C18  C17  H22 
+ <MOL 1530>:  C19  C17  C18  C21 
+ <MOL 1530>:  C18  C3   C21  C6  
+ <MOL 1530>:  C21  H4   C3   N3  
+ <MOL 1530>:  C13  C4   N3   C3  
+ <MOL 1530>:  C5   N3   C4   O1  
+ <MOL 1530>:  C4   C14  C5   C6  
+ <MOL 1530>:  C5   C21  C6   O2  
+ <MOL 1530>:  C14  H21  C15  O2  
+ <MOL 1530>:  C5   C15  C14  H20 
+ total 4924 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	36372
+  )
+ (no restraints)
+> savepdb complex 6ty5_ref.pdb
+Writing pdb file: 6ty5_ref.pdb
+   printing CRYST1 record to PDB file with box info
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 1; Notes = 1.
+log started: Tue Mar 19 12:08:11 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Tue Mar 19 12:08:11 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+> bond complex.7.SG complex.20.SG
+> bond complex.152.SG complex.158.SG
+> bond complex.228.SG complex.241.SG
+> bond complex.231.SG complex.238.SG
+> bond complex.424.SG complex.454.SG
+> bond complex.721.SG complex.748.SG
+> bond complex.992.SG complex.1005.SG
+> bond complex.995.SG complex.1002.SG
+> bond complex.1189.SG complex.1219.SG
+> bond complex.1486.SG complex.1513.SG
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Total mass 830259.662 amu,  Density 0.915 g/cc
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -12.000001
+Total perturbed charge:   -12.000001
+> addionsrand complex Na+ 38 Cl- 24
+Adding 62 counter ions to "complex". 36371 solvent molecules will remain.
+0: Placed Na+ in complex at (50.10, -5.63, 47.08).
+Placed Cl- in complex at (56.55, 19.04, -20.42).
+0: Placed Na+ in complex at (7.17, 40.25, 44.35).
+Placed Cl- in complex at (37.88, 40.42, -6.54).
+0: Placed Na+ in complex at (30.02, -52.31, -26.41).
+Placed Cl- in complex at (-22.20, 0.81, 48.07).
+0: Placed Na+ in complex at (-22.76, 52.57, -36.38).
+Placed Cl- in complex at (31.08, 21.12, -16.53).
+0: Placed Na+ in complex at (-45.86, -0.18, 54.39).
+Placed Cl- in complex at (-10.59, 1.26, 53.55).
+0: Placed Na+ in complex at (20.70, 12.66, 50.10).
+Placed Cl- in complex at (-21.06, 41.15, 47.94).
+0: Placed Na+ in complex at (5.80, -61.65, 9.93).
+Placed Cl- in complex at (49.74, -2.91, -25.81).
+0: Placed Na+ in complex at (-24.60, -26.29, -49.76).
+Placed Cl- in complex at (42.69, -6.48, -42.62).
+0: Placed Na+ in complex at (-52.47, -18.21, 33.79).
+Placed Cl- in complex at (-15.36, -18.96, 39.34).
+0: Placed Na+ in complex at (4.70, -51.56, 12.71).
+Placed Cl- in complex at (44.02, 9.91, -26.20).
+0: Placed Na+ in complex at (-48.73, 16.87, -42.92).
+Placed Cl- in complex at (-23.05, 7.61, 61.64).
+0: Placed Na+ in complex at (-42.19, -34.90, -34.84).
+Placed Cl- in complex at (40.54, 2.55, 45.77).
+0: Placed Na+ in complex at (-51.45, 16.19, 35.70).
+Placed Cl- in complex at (25.80, 34.23, -14.75).
+0: Placed Na+ in complex at (8.96, -0.51, -0.01).
+Placed Cl- in complex at (-53.94, 8.92, 13.72).
+0: Placed Na+ in complex at (26.59, 61.22, 23.02).
+Placed Cl- in complex at (-14.67, 29.46, -63.58).
+0: Placed Na+ in complex at (-25.19, -28.10, 22.94).
+Placed Cl- in complex at (15.54, -36.23, 39.26).
+0: Placed Na+ in complex at (17.45, -56.46, -45.48).
+Placed Cl- in complex at (10.77, -33.08, 53.34).
+0: Placed Na+ in complex at (37.67, 30.43, 1.23).
+Placed Cl- in complex at (40.86, 40.87, -5.53).
+0: Placed Na+ in complex at (-52.51, -35.43, 30.11).
+Placed Cl- in complex at (44.20, 39.71, 24.24).
+0: Placed Na+ in complex at (-53.90, -46.54, -21.51).
+Placed Cl- in complex at (21.07, -25.13, 6.55).
+0: Placed Na+ in complex at (-1.50, -63.09, -5.48).
+Placed Cl- in complex at (7.92, 65.69, 3.34).
+0: Placed Na+ in complex at (7.42, -50.22, -39.96).
+Placed Cl- in complex at (9.11, -31.89, -42.27).
+0: Placed Na+ in complex at (45.55, 12.29, -45.77).
+Placed Cl- in complex at (-34.52, -27.81, 27.22).
+0: Placed Na+ in complex at (38.75, 50.79, -27.18).
+Placed Cl- in complex at (15.59, 3.94, -45.29).
+0: Placed Na+ in complex at (41.38, 49.02, -4.61).
+0: Placed Na+ in complex at (26.24, 43.84, -18.46).
+0: Placed Na+ in complex at (-13.39, 52.41, -46.13).
+0: Placed Na+ in complex at (7.91, 65.95, 13.32).
+0: Placed Na+ in complex at (-45.34, 41.36, 35.21).
+0: Placed Na+ in complex at (20.81, -21.57, -35.21).
+0: Placed Na+ in complex at (-29.95, -14.88, 45.86).
+0: Placed Na+ in complex at (22.63, 0.01, -36.36).
+0: Placed Na+ in complex at (7.42, 64.75, -0.13).
+0: Placed Na+ in complex at (27.29, 36.94, -24.50).
+0: Placed Na+ in complex at (-21.43, 54.91, -39.38).
+0: Placed Na+ in complex at (-34.10, 25.42, 50.21).
+0: Placed Na+ in complex at (60.91, 1.29, 37.37).
+0: Placed Na+ in complex at (-55.78, 9.05, -23.49).
+> charge complex
+Total unperturbed charge:   1.999999
+Total perturbed charge:     1.999999
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+
+/home/valerij/miniconda3/envs/tau_ramd/bin/teLeap: Warning!
+The unperturbed charge of the unit (1.999999) is not zero.
+
+/home/valerij/miniconda3/envs/tau_ramd/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1530>:  C2   H3   C1   N1  
+ <MOL 1530>:  C8   C1   N1   N2  
+ <MOL 1530>:  C20  C2   C16  N2  
+ <MOL 1530>:  C7   C16  C20  C19 
+ <MOL 1530>:  C20  C18  C19  H23 
+ <MOL 1530>:  C16  C17  C2   C1  
+ <MOL 1530>:  C2   C18  C17  H22 
+ <MOL 1530>:  C19  C17  C18  C21 
+ <MOL 1530>:  C18  C3   C21  C6  
+ <MOL 1530>:  C21  H4   C3   N3  
+ <MOL 1530>:  C13  C4   N3   C3  
+ <MOL 1530>:  C5   N3   C4   O1  
+ <MOL 1530>:  C4   C14  C5   C6  
+ <MOL 1530>:  C5   C21  C6   O2  
+ <MOL 1530>:  C14  H21  C15  O2  
+ <MOL 1530>:  C5   C15  C14  H20 
+ total 4924 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	36371
+  )
+ (no restraints)
+> savepdb complex 6ty5_ref.pdb
+Writing pdb file: 6ty5_ref.pdb
+log started: Tue Mar 19 12:08:46 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff14SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #    Uses frcmod.ff14SB for proteins; ff99bsc0 for DNA; ff99bsc0_chiOL3 for RNA
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>> # glycam
+>> 	{ "OG"  "O" "sp3" }
+>> 	{ "OL"  "O" "sp3" }
+>> 	{ "AC"  "C" "sp3" }
+>> 	{ "EC"  "C" "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> parm10 = loadamberparams parm10.dat
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/parm10.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA
+>> frcmod14SB = loadamberparams frcmod.ff14SB
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/frcmod.ff14SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff14SB protein backbone and sidechain parameters
+>> #
+>> #	Load main chain and terminating amino acid libraries, nucleic acids
+>> #
+>> loadOff amino12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/amino12.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> loadOff nucleic12.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/nucleic12.lib
+Loading: A
+Loading: A3
+Loading: A5
+Loading: AN
+Loading: C
+Loading: C3
+Loading: C5
+Loading: CN
+Loading: DA
+Loading: DA3
+Loading: DA5
+Loading: DAN
+Loading: DC
+Loading: DC3
+Loading: DC5
+Loading: DCN
+Loading: DG
+Loading: DG3
+Loading: DG5
+Loading: DGN
+Loading: DT
+Loading: DT3
+Loading: DT5
+Loading: DTN
+Loading: G
+Loading: G3
+Loading: G5
+Loading: GN
+Loading: OHE
+Loading: U
+Loading: U3
+Loading: U5
+Loading: UN
+>> #
+>> #       Load water and ions
+>> # 
+>> loadOff atomic_ions.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids and nucleic acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>>   { 0 "G" "G5"  } { 1 "G" "G3"  } 
+>>   { 0 "A" "A5"  } { 1 "A" "A3"  } 
+>>   { 0 "C" "C5"  } { 1 "C" "C3"  } 
+>>   { 0 "U" "U5"  } { 1 "U" "U3"  } 
+>>   { 0 "DG" "DG5"  } { 1 "DG" "DG3"  }  
+>>   { 0 "DA" "DA5"  } { 1 "DA" "DA3"  }  
+>>   { 0 "DC" "DC5"  } { 1 "DC" "DC3"  }  
+>>   { 0 "DT" "DT5"  } { 1 "DT" "DT3"  }  
+>> #  some old Amber residue names for RNA:
+>>   { 0  "RA5" "A5" } { 1 "RA3" "A3"} {"RA" "A" }
+>>   { 0  "RC5" "C5" } { 1 "RC3" "C3"} {"RC" "C" }
+>>   { 0  "RG5" "G5" } { 1 "RG3" "G3"} {"RG" "G" }
+>>   { 0  "RU5" "U5" } { 1 "RU3" "U3"} {"RU" "U" }
+>> #  some really old Amber residue names, assuming DNA:
+>>   { 0 "GUA" "DG5"  } { 1 "GUA" "DG3"  } { "GUA" "DG" }
+>>   { 0 "ADE" "DA5"  } { 1 "ADE" "DA3"  } { "ADE" "DA" }
+>>   { 0 "CYT" "DC5"  } { 1 "CYT" "DC3"  } { "CYT" "DC" }
+>>   { 0 "THY" "DT5"  } { 1 "THY" "DT3"  } { "THY" "DT" }
+>> #  uncomment out the following if you have this old style RNA files:
+>> # { 0 "GUA" "G5"  } { 1 "GUA" "G3"  } { "GUA" "G" }
+>> # { 0 "ADE" "A5"  } { 1 "ADE" "A3"  } { "ADE" "A" }
+>> # { 0 "CYT" "C5"  } { 1 "CYT" "C3"  } { "CYT" "C" }
+>> # { 0 "URA" "R5"  } { 1 "URA" "R3"  } { "URA" "R" }
+>> 
+>> }
+>> 
+>> #  try to be good about reading in really old atom names as well:
+>> addPdbAtomMap {
+>>   { "O5*" "O5'" }
+>>   { "C5*" "C5'" }
+>>   { "C4*" "C4'" }
+>>   { "O4*" "O4'" }
+>>   { "C3*" "C3'" }
+>>   { "O3*" "O3'" }
+>>   { "C2*" "C2'" }
+>>   { "O2*" "O2'" }
+>>   { "C1*" "C1'" }
+>>   { "C5M" "C7"  }
+>>   { "H1*" "H1'" }
+>>   { "H2*1" "H2'" }
+>>   { "H2*2" "H2''" }
+>>   { "H2'1" "H2'" }
+>>   { "H2'2" "H2''" }
+>>   { "H3*" "H3'" }
+>>   { "H4*" "H4'" }
+>>   { "H5*1" "H5'" }
+>>   { "H5*2" "H5''" }
+>>   { "H5'1" "H5'" }
+>>   { "H5'2" "H5''" }
+>>   { "HO'2" "HO2'" }
+>>   { "H5T"  "HO5'" }
+>>   { "H3T"  "HO3'" }
+>>   { "O1'" "O4'" }
+>>   { "OA"  "OP1" }
+>>   { "OB"  "OP2" }
+>>   { "O1P" "OP1" }
+>>   { "O2P" "OP2" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+>> 
+> 
+> source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source: /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+----- Source of /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff done
+>> logFile leap.log
+log started: Tue Mar 19 12:08:46 2024
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the general Amber Force field.
+>> #       This file is mostly for use with Antechamber
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "h1"  "H" "sp3" }
+>> 	{ "h2"  "H" "sp3" }
+>> 	{ "h3"  "H" "sp3" }
+>> 	{ "h4"  "H" "sp3" }
+>> 	{ "h5"  "H" "sp3" }
+>> 	{ "ha"  "H" "sp3" }
+>> 	{ "hc"  "H" "sp3" }
+>> 	{ "hn"  "H" "sp3" }
+>> 	{ "ho"  "H" "sp3" }
+>> 	{ "hp"  "H" "sp3" }
+>> 	{ "hs"  "H" "sp3" }
+>> 	{ "hw"  "H" "sp3" }
+>> 	{ "hx"  "H" "sp3" }
+>> 	{ "o"  "O" "sp2" }
+>> 	{ "o2"  "O" "sp2" }
+>> 	{ "oh"  "O" "sp3" }
+>> 	{ "op"  "O" "sp3" }
+>> 	{ "oq"  "O" "sp3" }
+>> 	{ "os"  "O" "sp3" }
+>> 	{ "ow"  "O" "sp3" }
+>> 	{ "c"  "C" "sp2" }
+>> 	{ "c1"  "C" "sp2" }
+>> 	{ "c2"  "C" "sp2" }
+>> 	{ "c3"  "C" "sp3" }
+>> 	{ "ca"  "C" "sp2" }
+>> 	{ "cc"  "C" "sp2" }
+>> 	{ "cd"  "C" "sp2" }
+>> 	{ "ce"  "C" "sp2" }
+>> 	{ "cf"  "C" "sp2" }
+>> 	{ "cg"  "C" "sp2" }
+>> 	{ "ch"  "C" "sp2" }
+>> 	{ "cp"  "C" "sp2" }
+>> 	{ "cq"  "C" "sp2" }
+>> 	{ "cu"  "C" "sp2" }
+>> 	{ "cv"  "C" "sp2" }
+>> 	{ "cx"  "C" "sp2" }
+>> 	{ "cy"  "C" "sp2" }
+>> 	{ "cz"  "C" "sp2" }
+>> 	{ "n"   "N" "sp2" }
+>> 	{ "n1"  "N" "sp2" }
+>> 	{ "n2"  "N" "sp2" }
+>> 	{ "n3"  "N" "sp3" }
+>> 	{ "n4"  "N" "sp3" }
+>> 	{ "na"  "N" "sp2" }
+>> 	{ "nb"  "N" "sp2" }
+>> 	{ "nc"  "N" "sp2" }
+>> 	{ "nd"  "N" "sp2" }
+>> 	{ "ne"  "N" "sp2" }
+>> 	{ "nf"  "N" "sp2" }
+>> 	{ "nh"  "N" "sp2" }
+>> 	{ "ni"  "N" "sp2" }
+>> 	{ "nj"  "N" "sp2" }
+>> 	{ "nk"  "N" "sp3" }
+>> 	{ "nl"  "N" "sp3" }
+>> 	{ "nm"  "N" "sp2" }
+>> 	{ "nn"  "N" "sp2" }
+>> 	{ "no"  "N" "sp2" }
+>> 	{ "np"  "N" "sp3" }
+>> 	{ "nq"  "N" "sp3" }
+>> 	{ "s"   "S" "sp2" }
+>> 	{ "s2"   "S" "sp2" }
+>> 	{ "s3"   "S" "sp3" }
+>> 	{ "s4"   "S" "sp3" }
+>> 	{ "s6"   "S" "sp3" }
+>> 	{ "sh"   "S" "sp3" }
+>> 	{ "sp"   "S" "sp3" }
+>> 	{ "sq"   "S" "sp3" }
+>> 	{ "ss"   "S" "sp3" }
+>> 	{ "sx"   "S" "sp3" }
+>> 	{ "sy"   "S" "sp3" }
+>> 	{ "p2"   "P" "sp2" }
+>> 	{ "p3"   "P" "sp3" }
+>> 	{ "p4"   "P" "sp3" }
+>> 	{ "p5"   "P" "sp3" }
+>> 	{ "pb"   "P" "sp3" }
+>> 	{ "pc"   "P" "sp3" }
+>> 	{ "pd"   "P" "sp3" }
+>> 	{ "pe"   "P" "sp3" }
+>> 	{ "pf"   "P" "sp3" }
+>> 	{ "px"   "P" "sp3" }
+>> 	{ "py"   "P" "sp3" }
+>> 	{ "f"   "F" "sp3" }
+>> 	{ "cl"  "Cl" "sp3" }
+>> 	{ "br"  "Br" "sp3" }
+>> 	{ "i"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the general force field parameter set.
+>> #
+>> gaff = loadamberparams gaff.dat
+Loading parameters: /home/valerij/miniconda3/envs/tau_ramd/dat/leap/parm/gaff.dat
+Reading title:
+AMBER General Force Field for organic molecules (Version 1.81, May 2017)
+> 
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+> loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Loading parameters: /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+> loadamberparams O0W_conv.frcmod
+Loading parameters: ./O0W_conv.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+Remark line goes here
+> loadamberprep O0W_sybyl_resp_conv_gaff.prepc
+Loading Prep file: ./O0W_sybyl_resp_conv_gaff.prepc
+Loaded UNIT: MOL
+> loadoff O0W_conv.lib
+Loading library: ./O0W_conv.lib
+Loading: complex
+> complex  = loadpdb 6ty5_comb.pdb
+Loading PDB file: ./6ty5_comb.pdb
+ (starting new molecule for chain B)
+ (starting new molecule for chain A)
+ (starting new molecule for chain B)
+Matching PDB residue names to LEaP variables.
+  Added missing heavy atom: .R<ACE 1>.A<CH3 2>
+  Added missing heavy atom: .R<NME 405>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 406>.A<CH3 2>
+  Added missing heavy atom: .R<NME 764>.A<C 3>
+  Added missing heavy atom: .R<ACE 765>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1170>.A<C 3>
+Starting new chain with ACE
+  Added missing heavy atom: .R<ACE 1171>.A<CH3 2>
+  Added missing heavy atom: .R<NME 1529>.A<C 3>
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+Starting new chain with TP3
+  total atoms in file: 24526
+  Leap added 35 missing atoms according to residue templates:
+       8 Heavy
+       27 H / lone pairs
+> bond complex.7.SG complex.20.SG
+> bond complex.152.SG complex.158.SG
+> bond complex.228.SG complex.241.SG
+> bond complex.231.SG complex.238.SG
+> bond complex.424.SG complex.454.SG
+> bond complex.721.SG complex.748.SG
+> bond complex.992.SG complex.1005.SG
+> bond complex.995.SG complex.1002.SG
+> bond complex.1189.SG complex.1219.SG
+> bond complex.1486.SG complex.1513.SG
+> solvateOct complex TIP3PBOX 10
+Scaling up box by a factor of 1.257103 to meet diagonal cut criterion
+  Solute vdw bounding box:              118.293 89.185 94.207
+  Total bounding box for atom centers:  143.435 143.435 143.435
+      (box expansion for 'iso' is  50.8%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 8  y= 8  z= 8
+  Volume: 1506559.392 A^3 (oct)
+  Total mass 830259.662 amu,  Density 0.915 g/cc
+  Added 36427 residues.
+> charge complex
+Total unperturbed charge: -12.000001
+Total perturbed charge:   -12.000001
+> addionsrand complex Na+ 36 Cl- 24
+Adding 60 counter ions to "complex". 36373 solvent molecules will remain.
+0: Placed Na+ in complex at (33.18, -51.41, 0.35).
+Placed Cl- in complex at (-33.86, -13.23, -18.23).
+0: Placed Na+ in complex at (26.83, 38.10, -38.60).
+Placed Cl- in complex at (-30.11, 16.13, -3.75).
+0: Placed Na+ in complex at (-35.69, 12.24, -59.42).
+Placed Cl- in complex at (-45.03, 14.66, 38.02).
+0: Placed Na+ in complex at (1.17, 26.42, 44.81).
+Placed Cl- in complex at (4.78, 5.00, -4.53).
+0: Placed Na+ in complex at (-11.92, -24.07, -36.38).
+Placed Cl- in complex at (-47.15, 7.88, -5.19).
+0: Placed Na+ in complex at (0.76, 53.50, -40.67).
+Placed Cl- in complex at (-31.78, -17.39, 38.56).
+0: Placed Na+ in complex at (13.03, 35.28, 47.15).
+Placed Cl- in complex at (-0.76, -25.95, -59.20).
+0: Placed Na+ in complex at (-17.45, 53.94, -3.85).
+Placed Cl- in complex at (-7.76, -3.46, 55.88).
+0: Placed Na+ in complex at (-40.13, 37.90, 24.36).
+Placed Cl- in complex at (41.38, 3.04, 48.49).
+0: Placed Na+ in complex at (-16.27, -31.91, -18.41).
+Placed Cl- in complex at (-21.85, 52.14, -29.08).
+0: Placed Na+ in complex at (-12.48, 49.05, 9.37).
+Placed Cl- in complex at (21.19, 30.33, 13.34).
+0: Placed Na+ in complex at (4.55, 41.63, -48.93).
+Placed Cl- in complex at (-22.39, 5.75, -58.39).
+0: Placed Na+ in complex at (13.76, -23.84, -61.85).
+Placed Cl- in complex at (15.10, 23.88, -24.95).
+0: Placed Na+ in complex at (8.03, 29.87, -41.41).
+Placed Cl- in complex at (4.55, 2.60, 4.74).
+0: Placed Na+ in complex at (-18.16, -55.35, -7.86).
+Placed Cl- in complex at (26.07, -28.08, -28.62).
+0: Placed Na+ in complex at (-32.69, -3.07, -43.20).
+Placed Cl- in complex at (5.42, 1.48, -51.97).
+0: Placed Na+ in complex at (2.01, -5.88, -46.04).
+Placed Cl- in complex at (27.87, -41.11, -10.80).
+0: Placed Na+ in complex at (56.80, -37.00, 19.59).
+Placed Cl- in complex at (61.78, 29.65, -20.17).
+0: Placed Na+ in complex at (-36.19, 47.92, -22.03).
+Placed Cl- in complex at (54.44, -41.68, 2.79).
+0: Placed Na+ in complex at (-39.39, -37.64, 9.07).
+Placed Cl- in complex at (14.15, -52.44, 30.84).
+0: Placed Na+ in complex at (-4.09, -1.53, -54.51).
+Placed Cl- in complex at (5.22, -54.04, 44.53).
+0: Placed Na+ in complex at (-6.76, 45.53, -41.18).
+Placed Cl- in complex at (-61.53, -3.14, 20.19).
+0: Placed Na+ in complex at (61.51, 18.73, -23.42).
+Placed Cl- in complex at (52.85, 17.42, -18.23).
+0: Placed Na+ in complex at (-55.42, -42.80, -15.42).
+Placed Cl- in complex at (-22.44, -56.61, -6.10).
+0: Placed Na+ in complex at (-27.97, 41.63, -22.38).
+0: Placed Na+ in complex at (9.17, -46.65, -41.63).
+0: Placed Na+ in complex at (53.94, 40.36, 18.96).
+0: Placed Na+ in complex at (48.06, -36.23, -13.84).
+0: Placed Na+ in complex at (1.77, 50.95, -30.71).
+0: Placed Na+ in complex at (15.97, 2.53, -62.91).
+0: Placed Na+ in complex at (40.41, 5.21, -41.46).
+0: Placed Na+ in complex at (9.34, 67.21, -18.76).
+0: Placed Na+ in complex at (-26.55, 54.29, 44.18).
+0: Placed Na+ in complex at (-54.12, 13.76, -5.83).
+0: Placed Na+ in complex at (47.82, 41.45, -19.72).
+0: Placed Na+ in complex at (-1.37, -53.71, 8.54).
+> charge complex
+Total unperturbed charge:  -0.000001
+Total perturbed charge:    -0.000001
+> saveamberparm complex 6ty5_ref.prmtop 6ty5_ref.inpcrd
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <MOL 1530>:  C2   H3   C1   N1  
+ <MOL 1530>:  C8   C1   N1   N2  
+ <MOL 1530>:  C20  C2   C16  N2  
+ <MOL 1530>:  C7   C16  C20  C19 
+ <MOL 1530>:  C20  C18  C19  H23 
+ <MOL 1530>:  C16  C17  C2   C1  
+ <MOL 1530>:  C2   C18  C17  H22 
+ <MOL 1530>:  C19  C17  C18  C21 
+ <MOL 1530>:  C18  C3   C21  C6  
+ <MOL 1530>:  C21  H4   C3   N3  
+ <MOL 1530>:  C13  C4   N3   C3  
+ <MOL 1530>:  C5   N3   C4   O1  
+ <MOL 1530>:  C4   C14  C5   C6  
+ <MOL 1530>:  C5   C21  C6   O2  
+ <MOL 1530>:  C14  H21  C15  O2  
+ <MOL 1530>:  C5   C15  C14  H20 
+ total 4924 improper torsions applied
+ 16 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	WAT	36373
+  )
+ (no restraints)
+> savepdb complex 6ty5_ref.pdb
+Writing pdb file: 6ty5_ref.pdb
+   printing CRYST1 record to PDB file with box info
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.

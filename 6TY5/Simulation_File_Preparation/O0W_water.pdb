@@ -1,0 +1,37 @@
+HETATM    1  O   HOH A1142      37.407   5.171   9.786  1.00  0.00           O  
+HETATM    2  H1  HOH A1142      36.633   5.259   9.230  1.00  0.00           H  
+HETATM    3  H2  HOH A1142      37.543   4.226   9.860  1.00  0.00           H  
+HETATM    4  O   HOH A1155      30.669  -7.480  17.488  1.00  0.00           O  
+HETATM    5  H1  HOH A1155      29.900  -6.974  17.227  1.00  0.00           H  
+HETATM    6  H2  HOH A1155      30.317  -8.194  18.019  1.00  0.00           H  
+HETATM    7  O   HOH A1170      34.982  -5.794  21.080  1.00  0.00           O  
+HETATM    8  H1  HOH A1170      34.396  -5.803  20.323  1.00  0.00           H  
+HETATM    9  H2  HOH A1170      34.400  -5.876  21.835  1.00  0.00           H  
+HETATM   10  O   HOH A1179      34.987   5.393   8.388  1.00  0.00           O  
+HETATM   11  H1  HOH A1179      34.402   4.921   8.980  1.00  0.00           H  
+HETATM   12  H2  HOH A1179      34.470   6.138   8.083  1.00  0.00           H  
+HETATM   13  O   HOH B1244      39.531  -2.981   3.621  1.00  0.00           O  
+HETATM   14  H1  HOH B1244      38.606  -2.955   3.868  1.00  0.00           H  
+HETATM   15  H2  HOH B1244      39.759  -3.910   3.642  1.00  0.00           H  
+HETATM   16  O   HOH B1300      42.169   2.682  11.840  1.00  0.00           O  
+HETATM   17  H1  HOH B1300      42.981   3.114  12.105  1.00  0.00           H  
+HETATM   18  H2  HOH B1300      41.738   2.455  12.664  1.00  0.00           H  
+CONECT    1    2    3
+CONECT    2    1
+CONECT    3    1
+CONECT    4    5    6
+CONECT    5    4
+CONECT    6    4
+CONECT    7    8    9
+CONECT    8    7
+CONECT    9    7
+CONECT   10   11   12
+CONECT   11   10
+CONECT   12   10
+CONECT   13   14   15
+CONECT   14   13
+CONECT   15   13
+CONECT   16   17   18
+CONECT   17   16
+CONECT   18   16
+END
