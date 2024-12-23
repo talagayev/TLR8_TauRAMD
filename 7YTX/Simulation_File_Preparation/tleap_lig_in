@@ -1,0 +1,12 @@
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/oldff/leaprc.ff14SB
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+loadamberparams EFZ.frcmod
+loadamberprep EFZ_sybyl_resp_gaff.prepc
+complex = loadpdb NEWPDB.PDB
+saveamberparm complex JRI_conv.prmtop JRI_conv.inpcrd
+saveoff complex JRI_conv.lib
+saveamberparm complex JRI_conv_2.prmtop JRI_conv_2.inpcrd
+savemol2 complex JRI_conv.mol2 1
+savepdb complex JRI_conv.pdb
+charge complex
+quit

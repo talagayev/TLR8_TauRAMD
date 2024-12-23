@@ -1,0 +1,25 @@
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/oldff/leaprc.ff14SB
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+loadamberparams JRI_conv.frcmod
+loadamberprep EFZ_sybyl_resp_gaff.prepc
+loadoff JRI_conv.lib
+complex  = loadpdb 7tyx_comb.pdb
+bond complex.6.SG complex.19.SG
+bond complex.151.SG complex.157.SG
+bond complex.227.SG complex.240.SG
+bond complex.230.SG complex.237.SG
+bond complex.426.SG complex.456.SG
+bond complex.723.SG complex.750.SG
+bond complex.991.SG complex.1004.SG
+bond complex.994.SG complex.1001.SG
+bond complex.1192.SG complex.1222.SG
+bond complex.1489.SG complex.1516.SG
+solvateOct complex TIP3PBOX 10
+charge complex
+addionsrand complex Na+ 34 Cl- 24
+charge complex
+saveamberparm complex 7tyx_ref.prmtop 7tyx_ref.inpcrd
+savepdb complex 7tyx_ref.pdb
+quit
