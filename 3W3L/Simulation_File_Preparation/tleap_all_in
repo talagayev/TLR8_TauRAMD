@@ -1,0 +1,15 @@
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/oldff/leaprc.ff14SB
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.ionsjc_tip3p
+loadamberparams /home/valerij/miniconda3/envs/openmmdl/dat/leap/parm/frcmod.tip3p
+loadamberparams RX8_conv.frcmod
+loadamberprep RX8_sybyl_resp_conv_gaff.prepc
+loadoff RX8_conv.lib
+complex  = loadpdb 3w3l_comb.pdb
+solvateBox complex TIP3PBOX 10
+charge complex
+addionsrand complex Na+ 32 Cl- 24
+charge complex
+saveamberparm complex 3w3l_ref.prmtop 3w3l_ref.inpcrd
+savepdb complex 3w3l_ref.pdb
+quit
