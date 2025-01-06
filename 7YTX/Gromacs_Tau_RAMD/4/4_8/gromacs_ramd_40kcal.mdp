@@ -1,0 +1,69 @@
+integrator               = md    
+comm-mode                = Linear
+nstcomm                  = 100
+comm_grps                = Protein_MOL  
+dt                       = 0.002 
+nsteps                   = 50000000
+nstxout                  = 0
+nstvout                  = 0
+nstlog                   = 5000
+nstenergy                = 5000
+nstxtcout                = 5000
+nstfout                  = 0
+compressed-x-precision   = 1000
+xtc_grps                 = SYSTEM  
+pbc                      = xyz  
+rlist                    = 1.2
+coulombtype              = PME  
+rcoulomb                 = 1.2          
+cutoff-scheme            = Verlet
+nstlist                  = 20
+fourierspacing           = 0.12
+pme_order                = 4
+ewald_geometry           = 3d
+ewald-rtol               = 1e-5
+ewald-rtol-lj            = 1e-5
+optimize_fft             = yes
+vdw-type                 = Cut-off
+vdw-modifier             = none
+rvdw                     = 1.2
+
+tcoupl                   = Nose-Hoover
+tc_grps                  = Protein_MOL  Water_and_ions
+tau_t                    = 0.1 0.1
+ref_t                    = 313 313 
+nsttcouple               = 2 
+
+Pcoupl                   = Parrinello-Rahman
+pcoupltype               = isotropic
+tau_p                    = 5.0
+compressibility          = 4.5e-5  
+ref_p                    = 1.0    
+refcoord_scaling         = com
+           
+gen_vel                  = no  
+gen_seed                 = -1
+continuation             = yes
+constraints              = h-bonds
+constraint_algorithm     = lincs    
+lincs_order              = 4
+lincs_iter               = 1
+lincs_warnangle          = 60
+DispCorr                 = EnerPres
+
+ramd                     = yes
+ramd-seed                = 9848
+ramd-ngroups             = 1
+ramd-group1-force        = 294 ; = 9 kcal/mol A
+ramd-eval-freq           = 50
+ramd-group1-r-min-dist   = 0.0025       ; nm
+ramd-force-out-freq      = 10
+ramd-group1-max-dist     = 6.0         ; nm
+ramd-group1-receptor     = Protein
+ramd-group1-receptor-pbc-atom = 17341
+ramd-group1-ligand       = MOL
+ramd-group1-ligand-pbc-atom = 0
+ramd-pbc-ref-prev-step-com = yes
+ramd-old-angle-dist = no
+
+

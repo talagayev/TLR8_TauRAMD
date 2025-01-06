@@ -1,0 +1,212 @@
+               :-) GROMACS - gmx grompp, 2020.5-dev-UNCHECKED (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx grompp, version 2020.5-dev-UNCHECKED
+Executable:   /afs/math/software/gromacs/ramd-2.0/@sys/@sys/bin/gmx
+Data prefix:  /afs/math/software/gromacs/ramd-2.0/@sys/@sys
+Working dir:  /net/beegfs/talagayev/gromacs/7tyx/GROMACS/3
+Command line:
+  gmx grompp -f gromacs.mdp -c 7tyx_3.gro -o 7tyx0.tpr -p 7tyx_3.top -maxwarn 5 -n index.ndx
+
+Ignoring obsolete mdp entry 'title'
+Ignoring obsolete mdp entry 'cpp'
+Ignoring obsolete mdp entry 'optimize_fft'
+Replacing old mdp entry 'nstxtcout' by 'nstxout-compressed'
+Replacing old mdp entry 'xtc_grps' by 'compressed-x-grps'
+
+NOTE 1 [file gromacs.mdp]:
+  You have set rlist larger than the interaction cut-off, but you also have
+  verlet-buffer-tolerance > 0. Will set rlist using verlet-buffer-tolerance.
+
+
+NOTE 2 [file gromacs.mdp]:
+  The Berendsen thermostat does not generate the correct kinetic energy
+  distribution. You might want to consider using the V-rescale thermostat.
+
+Setting the LD random seed to -38031449
+Generated 1596 of the 1596 non-bonded parameter combinations
+Generating 1-4 interactions: fudge = 0.5
+Generated 1596 of the 1596 1-4 parameter combinations
+Excluding 3 bonded neighbours molecule type 'system1'
+Excluding 3 bonded neighbours molecule type 'system2'
+Excluding 3 bonded neighbours molecule type 'system3'
+Excluding 3 bonded neighbours molecule type 'system4'
+Excluding 3 bonded neighbours molecule type 'MOL'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'Cl-'
+Excluding 3 bonded neighbours molecule type 'Na+'
+Excluding 3 bonded neighbours molecule type 'WAT'
+Velocities were taken from a Maxwell distribution at 300 K
+
+NOTE 3 [file 7tyx_3.top, line 273691]:
+  The bond in molecule-type MOL between atoms 41 C20 and 42 N5 has an
+  estimated oscillational period of 1.8e-02 ps, which is less than 10 times
+  the time step of 2.0e-03 ps.
+  Maybe you forgot to change the constraints mdp option.
+
+Number of degrees of freedom in T-Coupling group Protein_MOL is 61639.41
+Number of degrees of freedom in T-Coupling group Water_and_ions is 249477.59
+Estimate for the relative computational load of the PME mesh part: 0.23
+
+NOTE 4 [file gromacs.mdp]:
+  This run will generate roughly 3497 Mb of data
+
+
+There were 4 notes
+
+GROMACS reminds you: "The Path Of the Righteous Man is Beset On All Sides With the Iniquities Of the Selfish and the Tyranny Of Evil Men." (Pulp Fiction)
+
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+turning H bonds into constraints...
+Determining Verlet buffer for a tolerance of 0.005 kJ/mol/ps at 300 K
+Calculated rlist for 1x1 atom pair-list as 1.033 nm, buffer size 0.033 nm
+Set rlist, assuming 4x4 atom pair-list, to 1.000 nm, buffer size 0.000 nm
+Note that mdrun will redetermine rlist based on the actual pair-list setup
+Calculating fourier grid dimensions for X Y Z
+Using a fourier grid of 104x104x104, spacing 0.120 0.120 0.120
+               :-) GROMACS - gmx mdrun, 2020.5-dev-UNCHECKED (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar      Christian Blau   Viacheslav Bolnykh     Kevin Boyd    
+ Aldert van Buuren   Rudi van Drunen     Anton Feenstra       Alan Gray     
+  Gerrit Groenhof     Anca Hamuraru    Vincent Hindriksen  M. Eric Irrgang  
+  Aleksei Iupinov   Christoph Junghans     Joe Jordan     Dimitrios Karkoulis
+    Peter Kasson        Jiri Kraus      Carsten Kutzner      Per Larsson    
+  Justin A. Lemkul    Viveca Lindahl    Magnus Lundborg     Erik Marklund   
+    Pascal Merz     Pieter Meulenhoff    Teemu Murtola       Szilard Pall   
+    Sander Pronk      Roland Schulz      Michael Shirts    Alexey Shvetsov  
+   Alfons Sijbers     Peter Tieleman      Jon Vincent      Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf      Artem Zhmurov   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2019, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2020.5-dev-UNCHECKED
+Executable:   /afs/math/software/gromacs/ramd-2.0/@sys/@sys/bin/gmx
+Data prefix:  /afs/math/software/gromacs/ramd-2.0/@sys/@sys
+Working dir:  /net/beegfs/talagayev/gromacs/7tyx/GROMACS/3
+Command line:
+  gmx mdrun -s 7tyx0.tpr -c confout_1st_equil.gro -x 1st_equil_run.xtc -g 1st_equil.log -ntmpi 1 -ntomp 16 -maxh 24
+
+Highest SIMD level requested by all nodes in run: AVX2_256
+SIMD instructions selected at compile time:       AVX2_128
+Compiled SIMD newer than requested; program might crash.
+Reading file 7tyx0.tpr, VERSION 2020.5-dev-UNCHECKED (single precision)
+Changing nstlist from 10 to 100, rlist from 1 to 1.15
+
+1 GPU selected for this run.
+Mapping of GPU IDs to the 2 GPU tasks in the 1 rank on this node:
+  PP:0,PME:0
+PP tasks will do (non-perturbed) short-ranged interactions on the GPU
+PP task will update and constrain coordinates on the CPU
+PME tasks will do all aspects on the GPU
+Using 1 MPI thread
+
+Non-default thread affinity set, disabling internal thread affinity
+
+Using 16 OpenMP threads 
+
+
+WARNING: This run will generate roughly 3495 Mb of data
+
+starting mdrun 'Generic title'
+10000000 steps,  20000.0 ps.
+
+Writing final coordinates.
+
+               Core t (s)   Wall t (s)        (%)
+       Time:   764500.901    47781.310     1600.0
+                         13h16:21
+                 (ns/day)    (hour/ns)
+Performance:       36.165        0.664
+
+GROMACS reminds you: "Make the Floor Burn" (2 Unlimited)
+
