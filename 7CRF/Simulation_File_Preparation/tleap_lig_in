@@ -1,0 +1,12 @@
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/oldff/leaprc.ff14SB
+source /home/valerij/miniconda3/envs/openmmdl/dat/leap/cmd/leaprc.gaff
+loadamberparams GD0_conv.frcmod
+loadamberprep GD0_sybyl_conv_resp_gaff.prepc
+complex = loadpdb NEWPDB.PDB
+saveamberparm complex GD0_conv.prmtop GD0_conv.inpcrd
+saveoff complex GD0_conv.lib
+saveamberparm complex GD0_conv_2.prmtop GD0_conv_2.inpcrd
+savemol2 complex GD0_conv.mol2 1
+savepdb complex GD0_conv.pdb
+charge complex
+quit
