@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-# Initialize lists to store minimal distances to residues 64 and 110
+# Initialize lists to store minimal distances
 minimal_distances_to_ex = []
 minimal_distances_to_in = []
 
