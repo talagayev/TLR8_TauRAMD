@@ -3,7 +3,7 @@ from MDAnalysis.analysis import distances
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Initialize lists to store minimal distances
+# Initialize lists to store minimal distances to residues
 minimal_distances_to_ex = []
 minimal_distances_to_in = []
 
